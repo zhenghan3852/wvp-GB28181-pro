@@ -76,8 +76,29 @@ axios.interceptors.request.use(
 Vue.prototype.$axios = axios;
 Vue.prototype.$cookies.config(60 * 30);
 Vue.prototype.$tableHeght = window.innerHeight - 170;
+Vue.prototype.$channelTypeList = {
+  1: {id: 1, name: "国标设备", style: {color: "#409eff", borderColor: "#b3d8ff"}},
+  2: {id: 2, name: "推流设备", style: {color: "#67c23a", borderColor: "#c2e7b0"}},
+  3: {id: 3, name: "拉流代理", style: {color: "#e6a23c", borderColor: "#f5dab1"}},
+};
+
+
+
+
 
 new Vue({
+  beforeCreate: function () {
+    // 获取本平台的服务ID
+    axios({
+      method: 'get',
+      url: `/api/server/system/configInfo`,
+    }).then( (res)=> {
+      if (res.data.code === 0) {
+        Vue.prototype.$myServerId = res.data.data.addOn.serverId;
+      }
+    }).catch( (error)=> {
+    });
+  },
   router: router,
   render: h => h(App),
 }).$mount('#app')

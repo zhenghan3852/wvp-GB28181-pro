@@ -188,7 +188,6 @@
         </dependency>
 
         <!--在线文档 -->
-        <!--在线文档 -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
@@ -199,20 +198,6 @@
             <artifactId>springdoc-openapi-security</artifactId>
             <version>1.6.10</version>
         </dependency>
-		<!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-			<version>3.6.1</version>
-		</dependency>
-
-
-		<!--在线文档 -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.10</version>
-		</dependency>
 
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
@@ -387,6 +372,7 @@
                 <version>2.7.2</version>
                 <configuration>
                     <includeSystemScope>true</includeSystemScope>
+                    <executable>true</executable>
                 </configuration>
             </plugin>
 
@@ -437,6 +423,7 @@
                         <exclude>**/application.yml</exclude>
                         <exclude>**/application-*.yml</exclude>
                         <exclude>**/local.jks</exclude>
+                        <exclude>**/install.sh</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -456,6 +443,7 @@
                                     <includes>
                                         <include>application.yml</include>
                                         <include>application-*.yml</include>
+                                        <include>install.sh</include>
                                     </includes>
                                 </resource>
                             </resources>

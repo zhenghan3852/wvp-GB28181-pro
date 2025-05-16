@@ -32,15 +32,16 @@
                          v-model="channelType" placeholder="请选择"
                          default-first-option>
                 <el-option label="全部" value=""></el-option>
-                <el-option label="国标设备" :value="1"></el-option>
-                <el-option label="推流设备" :value="2"></el-option>
-                <el-option label="拉流代理" :value="3"></el-option>
+                <el-option v-for="item in Object.values($channelTypeList)" :key="item.id" :label="item.name" :value="item.id"></el-option>
               </el-select>
               <el-button size="mini" type="primary" @click="add()">
                 添加通道
               </el-button>
               <el-button v-bind:disabled="multipleSelection.length === 0" size="mini" type="danger" @click="remove()">
                 移除通道
+              </el-button>
+              <el-button plain size="mini" type="warning" @click="showUnusualChanel()">
+                异常挂载通道
               </el-button>
               <el-button icon="el-icon-refresh-right" circle size="mini" @click="getChannelList()"></el-button>
             </div>
@@ -60,9 +61,7 @@
           <el-table-column label="类型" min-width="100">
             <template v-slot:default="scope">
               <div slot="reference" class="name-wrapper">
-                <el-tag size="medium" effect="plain" v-if="scope.row.dataType === 1">国标设备</el-tag>
-                <el-tag size="medium" effect="plain" type="success" v-else-if="scope.row.dataType === 2" >推流设备</el-tag>
-                <el-tag size="medium" effect="plain" type="warning" v-else-if="scope.row.dataType === 3">拉流代理</el-tag>
+                <el-tag size="medium" effect="plain" type="success" :style="$channelTypeList[scope.row.dataType].style" >{{$channelTypeList[scope.row.dataType].name}}</el-tag>
               </div>
             </template>
           </el-table-column>
@@ -88,6 +87,7 @@
       </el-main>
     </el-container>
     <GbChannelSelect ref="gbChannelSelect" dataType="group"></GbChannelSelect>
+    <UnusualGroupChannelSelect ref="unusualGroupChannelSelect" ></UnusualGroupChannelSelect>
   </div>
 </template>
 
@@ -96,6 +96,7 @@ import uiHeader from '../layout/UiHeader.vue'
 import DeviceService from "./service/DeviceService";
 import GroupTree from "./common/GroupTree.vue";
 import GbChannelSelect from "./dialog/GbChannelSelect.vue";
+import UnusualGroupChannelSelect from "./dialog/UnusualGroupChannelSelect.vue";
 import RegionTree from "./common/RegionTree.vue";
 
 export default {
@@ -103,6 +104,7 @@ export default {
   components: {
     RegionTree,
     GbChannelSelect,
+    UnusualGroupChannelSelect,
     uiHeader,
     GroupTree,
   },
@@ -322,6 +324,9 @@ export default {
     },
     onChannelChange: function (deviceId) {
       //
+    },
+    showUnusualChanel: function () {
+      this.$refs.unusualGroupChannelSelect.openDialog()
     },
   }
 };
