@@ -342,7 +342,8 @@ create table wvp_cloud_record
     file_path       character varying(500),
     collect         bool default false,
     file_size       bigint,
-    time_len        bigint
+    time_len        bigint,
+    is_uploaded     bool default false
 );
 
 create table wvp_user
