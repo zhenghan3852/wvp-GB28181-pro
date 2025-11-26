@@ -53,7 +53,8 @@ public class DeviceChannelProvider {
                 " coalesce(dc.gb_business_group_id, dc.business_group_id) as business_group_id,\n" +
                 " coalesce(dc.gb_download_speed, dc.download_speed) as download_speed,\n" +
                 " coalesce(dc.gb_svc_space_support_mod, dc.svc_space_support_mod) as svc_space_support_mod,\n" +
-                " coalesce(dc.gb_svc_time_support_mode,dc.svc_time_support_mode) as svc_time_support_mode\n" +
+                " coalesce(dc.gb_svc_time_support_mode,dc.svc_time_support_mode) as svc_time_support_mode,\n" +
+                " dc.alias\n" +
                 " from " +
                 " wvp_device_channel dc "
                 ;

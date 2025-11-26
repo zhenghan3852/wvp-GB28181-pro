@@ -26,6 +26,7 @@ public interface CommonGBChannelMapper {
             "create_time," +
             "update_time," +
             "gb_name," +
+            "alias," +
             "gb_manufacturer," +
             "gb_model," +
             "gb_owner," +
@@ -65,6 +66,7 @@ public interface CommonGBChannelMapper {
             "#{createTime}, " +
             "#{updateTime}, " +
             "#{gbName}, " +
+            "#{alias}, " +
             "#{gbManufacturer}, " +
             "#{gbModel}, " +
             "#{gbOwner}, " +
@@ -113,6 +115,7 @@ public interface CommonGBChannelMapper {
             "SET update_time=#{updateTime}" +
             ", gb_device_id = #{gbDeviceId}" +
             ", gb_name = #{gbName}" +
+            ", alias = #{alias}" +
             ", gb_manufacturer = #{gbManufacturer}" +
             ", gb_model = #{gbModel}" +
             ", gb_owner = #{gbOwner}" +
@@ -174,6 +177,7 @@ public interface CommonGBChannelMapper {
             "create_time," +
             "update_time," +
             "gb_name," +
+            "alias," +
             "gb_manufacturer," +
             "gb_model," +
             "gb_owner," +
@@ -209,7 +213,7 @@ public interface CommonGBChannelMapper {
             "VALUES" +
             "<foreach collection='commonGBChannels' index='index' item='item' separator=','> " +
             "(#{item.gbDeviceId}, #{item.dataType}, #{item.dataDeviceId},#{item.createTime},#{item.updateTime}," +
-            "#{item.gbName},#{item.gbManufacturer}, #{item.gbModel}," +
+            "#{item.gbName},#{item.alias},#{item.gbManufacturer}, #{item.gbModel}," +
             "#{item.gbOwner},#{item.gbCivilCode},#{item.gbBlock}, #{item.gbAddress}, #{item.gbParental}, #{item.gbParentId},#{item.gbSafetyWay}, " +
             "#{item.gbRegisterWay},#{item.gbCertNum},#{item.gbCertifiable},#{item.gbErrCode},#{item.gbEndTime}, #{item.gbSecrecy},#{item.gbIpAddress}," +
             "#{item.gbPort},#{item.gbPassword},#{item.gbStatus},#{item.gbLongitude}, #{item.gbLatitude},#{item.gbPtzType},#{item.gbPositionType},#{item.gbRoomType}," +
@@ -228,7 +232,7 @@ public interface CommonGBChannelMapper {
 
     @Update(value = {" <script>" +
             " UPDATE wvp_device_channel " +
-            " SET update_time=#{updateTime}, gb_device_id = null, gb_name = null, gb_manufacturer = null," +
+            " SET update_time=#{updateTime}, gb_device_id = null, gb_name = null, alias = null, gb_manufacturer = null," +
             " gb_model = null, gb_owner = null, gb_block = null, gb_address = null," +
             " gb_parental = null, gb_parent_id = null, gb_safety_way = null, gb_register_way = null, gb_cert_num = null," +
             " gb_certifiable = null, gb_err_code = null, gb_end_time = null, gb_secrecy = null, gb_ip_address = null, " +
@@ -396,6 +400,7 @@ public interface CommonGBChannelMapper {
             " SET update_time=#{item.updateTime}" +
             ", gb_device_id=#{item.gbDeviceId}" +
             ", gb_name=#{item.gbName}" +
+            ", alias=#{item.alias}" +
             ", gb_manufacturer=#{item.gbManufacturer}" +
             ", gb_model=#{item.gbModel}" +
             ", gb_owner=#{item.gbOwner}" +
@@ -509,6 +514,7 @@ public interface CommonGBChannelMapper {
             "    wdc.record_plan_id,\n" +
             "    coalesce( wdc.gb_device_id, wdc.device_id) as gb_device_id,\n" +
             "    coalesce( wdc.gb_name, wdc.name) as gb_name,\n" +
+            "    wdc.alias,\n" +
             "    coalesce( wdc.gb_manufacturer, wdc.manufacturer) as gb_manufacturer,\n" +
             "    coalesce( wdc.gb_model, wdc.model) as gb_model,\n" +
             "    coalesce( wdc.gb_owner, wdc.owner) as gb_owner,\n" +

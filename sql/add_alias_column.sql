@@ -1,0 +1,1 @@
+ALTER TABLE wvp_device_channel ADD COLUMN alias VARCHAR(255) DEFAULT NULL COMMENT '别名';

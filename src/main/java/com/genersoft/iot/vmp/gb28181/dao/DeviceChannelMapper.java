@@ -611,6 +611,7 @@ public interface DeviceChannelMapper {
             ", gps_time=#{gpsTime}" +
             ", stream_identification=#{streamIdentification}" +
             ", channel_type=#{channelType}" +
+            ", alias=#{alias}" +
             " WHERE id = #{id}" +
             "</script>"})
     void updateChannelForNotify(DeviceChannel channel);
@@ -661,7 +662,8 @@ public interface DeviceChannelMapper {
             " business_group_id,\n" +
             " download_speed,\n" +
             " svc_space_support_mod,\n" +
-            " svc_time_support_mode\n" +
+            " svc_time_support_mode,\n" +
+            " alias\n" +
             " from wvp_device_channel " +
             " where data_type = 1 and data_device_id=#{dataDeviceId} and device_id = #{channelId}" +
             " </script>"})

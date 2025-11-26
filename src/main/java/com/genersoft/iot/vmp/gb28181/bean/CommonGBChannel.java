@@ -17,6 +17,9 @@ public class CommonGBChannel {
     @Schema(description = "国标-名称")
     private String gbName;
 
+    @Schema(description = "别名")
+    private String alias;
+
     @Schema(description = "国标-设备厂商")
     private String gbManufacturer;
 
