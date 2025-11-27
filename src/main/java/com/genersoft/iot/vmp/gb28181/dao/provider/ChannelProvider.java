@@ -19,6 +19,7 @@ public class ChannelProvider {
             "    record_plan_id,\n" +
             "    coalesce(gb_device_id, device_id) as gb_device_id,\n" +
             "    coalesce(gb_name, name) as gb_name,\n" +
+            "    alias,\n" +
             "    coalesce(gb_manufacturer, manufacturer) as gb_manufacturer,\n" +
             "    coalesce(gb_model, model) as gb_model,\n" +
             "    coalesce(gb_owner, owner) as gb_owner,\n" +
@@ -63,6 +64,7 @@ public class ChannelProvider {
             "    wdc.record_plan_id,\n" +
             "    coalesce(wdc.gb_device_id,  wdc.device_id) as gb_device_id,\n" +
             "    coalesce(wdc.gb_name,  wdc.name) as gb_name,\n" +
+            "    wdc.alias,\n" +
             "    coalesce(wdc.gb_manufacturer,  wdc.manufacturer) as gb_manufacturer,\n" +
             "    coalesce(wdc.gb_model,  wdc.model) as gb_model,\n" +
             "    coalesce(wdc.gb_owner,  wdc.owner) as gb_owner,\n" +
@@ -107,6 +109,7 @@ public class ChannelProvider {
             "    wdc.update_time,\n" +
             "    coalesce(wpgc.custom_device_id, wdc.gb_device_id, wdc.device_id) as gb_device_id,\n" +
             "    coalesce(wpgc.custom_name, wdc.gb_name, wdc.name) as gb_name,\n" +
+            "    wdc.alias,\n" +
             "    coalesce(wpgc.custom_manufacturer, wdc.gb_manufacturer, wdc.manufacturer) as gb_manufacturer,\n" +
             "    coalesce(wpgc.custom_model, wdc.gb_model, wdc.model) as gb_model,\n" +
             "    coalesce(wpgc.custom_owner, wdc.gb_owner, wdc.owner) as gb_owner,\n" +

@@ -5,6 +5,9 @@
         <el-form-item label="名称" >
           <el-input v-model="form.gbName" placeholder="请输入通道名称"></el-input>
         </el-form-item>
+        <el-form-item label="别名" >
+          <el-input v-model="form.alias" placeholder="请输入通道别名"></el-input>
+        </el-form-item>
         <el-form-item label="编码" >
           <el-input v-model="form.gbDeviceId" placeholder="请输入通道编码">
             <template v-slot:append>

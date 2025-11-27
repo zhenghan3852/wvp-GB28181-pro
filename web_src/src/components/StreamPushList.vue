@@ -57,6 +57,8 @@
             <el-tag size="medium" type="info" v-if="!scope.row.pushing">已停止</el-tag>
           </template>
         </el-table-column>
+        <el-table-column prop="alias" label="别名" min-width="150" show-overflow-tooltip>
+        </el-table-column>
         <el-table-column prop="gbDeviceId" label="国标编码" min-width="200" >
         </el-table-column>
         <el-table-column label="位置信息" min-width="200">
