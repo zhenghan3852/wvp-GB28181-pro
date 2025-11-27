@@ -54,6 +54,7 @@
           </template>
         </el-table-column>
 
+        <el-table-column prop="alias" label="别名" min-width="150"  show-overflow-tooltip/>
         <el-table-column prop="gbDeviceId" label="国标编码" min-width="180"  show-overflow-tooltip/>
         <el-table-column label="拉流状态" min-width="120" >
           <template v-slot:default="scope">
