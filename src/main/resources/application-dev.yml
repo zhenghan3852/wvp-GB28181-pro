@@ -93,6 +93,7 @@ user-settings:
   record-push-live: true
   interface-authentication-excludes:
         - /api/proxy/list
+        - /api/proxy/start
         - /api/common/channel/play
         - /api/common/channel/list
   # 国标是否录制
