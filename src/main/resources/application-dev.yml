@@ -28,9 +28,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/wvp273数据库统合?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/wvp2?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
     username: root
-    password: 12345678
+    password: root123
 #[可选] WVP监听的HTTP端口, 网页和接口调用都是这个端口
 server:
   port: 18080
@@ -65,11 +65,15 @@ sip:
 media:
   id: zlmediakit-local
   # [必须修改] zlm服务器的内网IP
-  ip: 192.168.1.10
+  ip: 127.0.0.1
   # [必须修改] zlm服务器的http.port
-  http-port: 9092
+  http-port: 8080
   # [必选选] zlm服务器的hook.admin_params=secret
-  secret: TWSYFgYJOQWB4ftgeYut8DW4wbs7pQnj
+  secret: YevLVEu12JflZLCAloixcnSTbO6y9zCp
+  # 录像路径
+  record-path: /data/record
+  # 录像保存时长
+  record-day: 1
   # 启用多端口模式, 多端口模式使用端口区分每路流，兼容性更好。 单端口使用流的ssrc区分， 点播超时建议使用多端口测试
   rtp:
     # [可选] 是否启用多端口模式, 开启后会在portRange范围内选择端口用于媒体流传输
@@ -78,6 +82,7 @@ media:
     port-range: 40000,45000 # 端口范围
     # [可选] 国标级联在此范围内选择端口发送媒体流,
     send-port-range: 50000,55000 # 端口范围
+  record-assist-port: 18089
 # [根据业务需求配置]
 user-settings:
   # 点播/录像回放 等待超时时间,单位：毫秒
@@ -86,8 +91,14 @@ user-settings:
   auto-apply-play: true
   # 推流直播是否录制
   record-push-live: true
+  interface-authentication-excludes:
+        - /api/proxy/list
+        - /api/common/channel/play
+        - /api/common/channel/list
   # 国标是否录制
   record-sip: true
   # 国标点播 按需拉流, true：有人观看拉流，无人观看释放， false：拉起后不自动释放
   stream-on-demand: true
+  # 国标级联点播时是否使用自定义ssrc， 默认使用上级平台指定的ssrc， 参考国标文档-点播外域设备媒体流SSRC处理方式
+  use-custom-ssrc-for-parent-invite: false
 
