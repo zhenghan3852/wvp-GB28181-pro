@@ -27,6 +27,7 @@ import region from '../components/region.vue'
 import group from '../components/group.vue'
 import operations from '../components/operations.vue'
 import recordPLan from '../components/RecordPLan.vue'
+import imageGallery from '../components/ImageGallery.vue'
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
@@ -152,6 +153,11 @@ export default new VueRouter({
         {
           path: '/recordPLan',
           component: recordPLan,
+        },
+        {
+          path: '/imageGallery',
+          name: 'imageGallery',
+          component: imageGallery,
         },
         ]
     },

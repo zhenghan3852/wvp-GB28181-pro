@@ -28,9 +28,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/wvp273数据库统合?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/wvp2?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
     username: root
-    password: 12345678
+    password: 123456
 #[可选] WVP监听的HTTP端口, 网页和接口调用都是这个端口
 server:
   port: 18080
@@ -91,3 +91,9 @@ user-settings:
   # 国标点播 按需拉流, true：有人观看拉流，无人观看释放， false：拉起后不自动释放
   stream-on-demand: true
 
+# 图片配置
+image:
+  # [可选] 图片文件夹路径，支持绝对路径和相对路径
+  # 绝对路径示例: /Users/lihb/Desktop/obj/wvp-GB28181-pro/img
+  # 相对路径示例: img (相对于项目根目录)
+  path: /home/linaro/sophon-demo/pubs/results/images

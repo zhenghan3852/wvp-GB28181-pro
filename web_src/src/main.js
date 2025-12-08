@@ -13,6 +13,10 @@ import Fingerprint2 from 'fingerprintjs2';
 import VueClipboards from 'vue-clipboards';
 import Contextmenu from "vue-contextmenujs"
 import userService from "./components/service/UserService"
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
+
 
 Vue.config.productionTip = false;
 
@@ -33,6 +37,7 @@ Fingerprint2.get(function (components) {
   console.log("浏览器 ID: " + fingerPrint);
 });
 
+Vue.use(VueAwesomeSwiper)
 Vue.use(VueClipboard);
 Vue.use(ElementUI);
 Vue.use(VueCookies);

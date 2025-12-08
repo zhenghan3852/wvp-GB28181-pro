@@ -450,6 +450,22 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                         </configuration>
                     </execution>
+                    <execution> <!-- 复制 img 文件夹 -->
+                        <id>copy-img-folder</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>img</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/img</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
