@@ -1,0 +1,117 @@
+{
+  "generated_at": "2025-12-08T14:32:15Z",
+  "results": [
+    {
+      "image_name": "frame_0.jpg",
+      "channel_id": 1,
+      "frame_id": 0,
+      "timestamp": "2025-12-08T14:30:01Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "false",
+        "is_playphone": "true",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 145
+    },
+    {
+      "image_name": "frame_1.jpg",
+      "channel_id": 1,
+      "frame_id": 1,
+      "timestamp": "2025-12-08T14:30:01Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "false",
+        "is_playphone": "true",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 145
+    },
+    {
+      "image_name": "frame_2.jpg",
+      "channel_id": 1,
+      "frame_id": 2,
+      "timestamp": "2025-12-08T14:30:02Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "false",
+        "is_playphone": "true",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 138
+    },
+    {
+      "image_name": "frame_3.jpg",
+      "channel_id": 1,
+      "frame_id": 3,
+      "timestamp": "2025-12-08T14:30:03Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "false",
+        "is_playphone": "false",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 152
+    },
+    {
+      "image_name": "frame_4.jpg",
+      "channel_id": 1,
+      "frame_id": 4,
+      "timestamp": "2025-12-08T14:30:04Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "true",
+        "is_playphone": "false",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 141
+    },
+    {
+      "image_name": "frame_5.jpg",
+      "channel_id": 1,
+      "frame_id": 5,
+      "timestamp": "2025-12-08T14:30:05Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "false",
+        "is_people_fight": "false",
+        "is_people_sleep": "true",
+        "is_playphone": "false",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 168
+    },
+    {
+      "image_name": "frame_6.jpg",
+      "channel_id": 1,
+      "frame_id": 6,
+      "timestamp": "2025-12-08T14:30:06Z",
+      "algorithm_result": {
+        "is_armed_people": "false",
+        "is_fire": "false",
+        "is_leave": "true",
+        "is_people_fight": "false",
+        "is_people_sleep": "false",
+        "is_playphone": "false",
+        "is_smoke": "false"
+      },
+      "processing_time_ms": 159
+    }
+  ]
+}

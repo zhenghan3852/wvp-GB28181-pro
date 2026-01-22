@@ -103,3 +103,9 @@ user-settings:
   # 国标级联点播时是否使用自定义ssrc， 默认使用上级平台指定的ssrc， 参考国标文档-点播外域设备媒体流SSRC处理方式
   use-custom-ssrc-for-parent-invite: false
 
+# 图片配置
+image:
+  # [可选] 图片文件夹路径，支持绝对路径和相对路径
+  # 绝对路径示例: /Users/lihb/Desktop/obj/wvp-GB28181-pro/img
+  # 相对路径示例: img (相对于项目根目录)
+  path: /home/linaro/sophon-demo/pubs/results/images
