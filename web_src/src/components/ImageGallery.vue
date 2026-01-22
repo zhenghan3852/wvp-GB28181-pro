@@ -432,7 +432,7 @@ export default {
 }
 .swiper {
   width: 100%;
-  padding: 20px 0 50px;
+  padding: 10px 0 10px;
 }
 
 /* Slide 样式 */
